@@ -1,0 +1,16 @@
+{
+  "name": "mappy-webcomponent",
+  "version": "0.0.0",
+  "homepage": "https://github.com/paulgreg/mappy-webcomponent",
+  "authors": [
+    "Grégory Paul <paulgreg@gmail.com>"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "license": "Apache 2",
+  "private": false,
+  "dependencies": {
+    "polymer": "~0.2.3"
+  }
+}
