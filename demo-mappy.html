@@ -9,17 +9,28 @@
             font-family: Sans-serif;
         }
         mappy-element {
+            display: block;
+            width: 400px;
+            height: 400px;
+        }
+        div {
+            display: inline-block;
+            margin: 1em;
         }
     </style>
   </head>
   <body>
-      <h1>Mappy Element</h1>
-      <h2>Balise</h2>
-      <mappy-element></mappy-element>
-      <code>&lt;mappy-element&gt;&lt;/mappy-element&gt;</code>
+      <h1>&lt;Mappy Element /&gt;</h1>
+      <div>
+          <h2>Balise standard</h2>
+          <mappy-element></mappy-element>
+          <p><code>&lt;mappy-element&gt;&lt;/mappy-element&gt;</code></p>
+      </div>
 
-      <h2>Attributs personalisés</h2>
-      <mappy-element lat="51.505" lng="-0.09"></mappy-element>
-      <code>&lt;mappy-element lat="51.505" lng="-0.09"&gt;&lt;/mappy-element&gt;</code>
+      <div>
+          <h2>Attributs personalisés</h2>
+          <mappy-element lat="43.6044" lng="1.44295" layersControl="true"></mappy-element>
+          <p><code>&lt;mappy-element lat="43.6044" lng="1.44295" layersControl="true"&gt;&lt;/mappy-element&gt;</code></p>
+      </div>
   </body>
 </html>
