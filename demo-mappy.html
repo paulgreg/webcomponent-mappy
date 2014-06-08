@@ -23,14 +23,28 @@
       <h1>&lt;Mappy Element /&gt;</h1>
       <div>
           <h2>Balise standard</h2>
-          <mappy-element></mappy-element>
-          <p><code>&lt;mappy-element&gt;&lt;/mappy-element&gt;</code></p>
+          <mappy-element id="Paris"></mappy-element>
+          <p><code>&lt;mappy-element id="Paris"&gt;&lt;/mappy-element&gt;</code></p>
       </div>
 
       <div>
           <h2>Attributs personalisés</h2>
-          <mappy-element lat="43.6044" lng="1.44295" layersControl="true"></mappy-element>
-          <p><code>&lt;mappy-element lat="43.6044" lng="1.44295" layersControl="true"&gt;&lt;/mappy-element&gt;</code></p>
+          <mappy-element id="Toulouse" lat="43.6044" lng="1.44295" layersControl="true"></mappy-element>
+          <p><code>&lt;mappy-element id="Toulouse" lat="43.6044" lng="1.44295" layersControl="true"&gt;&lt;/mappy-element&gt;</code></p>
+          lat: <span class="lat"></span>, lng: <span class="lng"></span>
+          <script>
+            document.querySelector('mappy-element').addEventListener('mapmoved', function(e) {
+                console.log('test');
+                console.log(e.type, e.detail);
+                document.querySelector('.lat') = e.detail.lat;
+                document.querySelector('.lng') = e.detail.lng;
+            }, false);
+          </script>
       </div>
+      <p><code>
+          document.querySelector('#Toulouse').setAttribute('lat', '51.50939');<br>
+          document.querySelector('#Toulouse').setAttribute('lng', '-0.11832');<br>
+          document.querySelector('#Toulouse').locate('Lille')
+      </code></p>
   </body>
 </html>

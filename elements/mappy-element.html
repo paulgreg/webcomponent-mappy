@@ -25,12 +25,55 @@
         zoom: 7,
         layersControl: false,
         ready: function() {
-
-            var map = new L.Mappy.Map(this.$.map, {
+            this.map = new L.Mappy.Map(this.$.map, {
                 center: [this.lat, this.lng],
                 zoom: this.zoom,
-                layersControl: this.layersControl
+                layersControl: this.layersControl,
+                logoControl: {
+                    dir: "elements/images/"
+                }
             });
+
+            L.Mappy.setToken("Sy2MzsQjDYbvAoOibcNz5oVDUi1y848EN6EpC4K+0W6gWEWZgY9bOK1uRyx05CzxGptivijagx20wZc08rtYufgGsxDSvrta");
+
+            this.mLayer = L.layerGroup().addTo(this.map);
+
+            this.map.on('moveend', function(e) {
+                console.log('firing');
+                this.fire('mapmoved', { lat: this.lat, lng: this.lng });
+            });
+        },
+        enteredView: function(){
+        },
+        zoomChanged: function(oldValue, newValue) {
+            console.log('zoom has changed');
+            this.zoom = newValue;
+            this.map.setZoom(this.zoom);
+        },
+        latChanged: function(oldValue, newValue) {
+            console.log('lat has changed');
+            this.lat = newValue;
+            this.map.setView([ this.lat, this.lng ]);
+        },
+        lngChanged: function(oldValue, newValue) {
+            console.log('lng has changed');
+            this.lng = newValue;
+            this.map.setView([ this.lat, this.lng ]);
+        },
+        locate: function(term) {
+            L.Mappy.Services.geocode(term,
+                // Callback de succès
+                function(results) {
+                    var coords = results[0].Point.coordinates.split(",").reverse();
+                    this.map.setView(coords, 7);
+                    this.mLayer.clearLayers();
+                    this.mLayer.addLayer(L.marker(coords));
+                }.bind(this),
+                // Callback d'erreur
+                function() {
+                    // Error during geocoding
+                }
+            );
         }
     });
     </script>
