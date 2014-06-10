@@ -11,6 +11,7 @@
   "license": "Apache 2",
   "private": false,
   "dependencies": {
-    "polymer": "~0.2.3"
+    "polymer": "~0.2.3",
+    "leaflet": "~0.7.3"
   }
 }

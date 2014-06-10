@@ -1,7 +1,7 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
-<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+<link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
 <link rel="stylesheet" href="L.Mappy.css" />
-<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+<script src="bower_components/leaflet/dist/leaflet.js"></script>
 <script src="L.Mappy.js"></script>
 
 <polymer-element name="mappy-element" attributes="lat lng zoom layersControl">
@@ -30,7 +30,7 @@
                 zoom: this.zoom,
                 layersControl: this.layersControl,
                 logoControl: {
-                    dir: "elements/images/"
+                    dir: "images/"
                 }
             });
 
