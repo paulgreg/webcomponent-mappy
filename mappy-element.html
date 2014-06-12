@@ -38,10 +38,15 @@
 
             this.mLayer = L.layerGroup().addTo(this.map);
 
-            this.map.on('moveend', function(e) {
-                console.log('firing');
-                this.fire('mapmoved', { lat: this.lat, lng: this.lng });
-            });
+            var firePosition = function(e) {
+                var center = this.map.getCenter();
+                this.fire('mapmoved', { lat: center.lat, lng: center.lng });
+            }.bind(this);
+
+            this.map.on('move', firePosition);
+            this.map.on('moveend', firePosition);
+
+            this.fire('mapmoved', { lat: this.lat, lng: this.lng });
         },
         enteredView: function(){
         },
