@@ -2,58 +2,17 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <script src="bower_components/platform/platform.js"></script>
-    <link rel="import" href="bower_components/polymer/polymer.html">
-    <link rel="import" href="mappy-element.html">
     <style>
         body {
             font-family: Sans-serif;
             padding: 1em;
         }
-        body h1 {
-            left: auto;
-        }
-        mappy-element {
-            display: block;
-            width: 400px;
-            height: 400px;
-        }
-        article {
-            display: inline-block;
-            margin: 1em;
-            width: 450px;
-            vertical-align: top;
-        }
     </style>
   </head>
   <body>
-      <h1>&lt;Mappy Element /&gt;</h1>
-      <article>
-          <h2>Balise mappy</h2>
-          <mappy-element></mappy-element>
-          <p><code>&lt;mappy-element&gt;&lt;/mappy-element&gt;</code></p>
-      </article>
-
-      <article>
-          <h2>avec des attributs personalisés</h2>
-          <mappy-element id="second" lat="43.6044" lng="1.44295" layersControl="true"></mappy-element>
-          <p><code>&lt;mappy-element id="second" lat="43.6044" lng="1.44295" layersControl="true"&gt;&lt;/mappy-element&gt;</code></p>
-          <p>lat: <span class="lat"></span>, lng: <span class="lng"></span></p>
-          <script>
-            document.querySelector('#second').addEventListener('mapmoved', function(e) {
-                document.querySelector('.lat').innerText = e.detail.lat;
-                document.querySelector('.lng').innerText = e.detail.lng;
-            }, false);
-          </script>
-      </article>
-      <section>
-          <h3>À essayer...</h3>
-          <p><code>
-              document.querySelector('#second').setAttribute('lat', '51.50939');<br>
-              document.querySelector('#second').setAttribute('lng', '-0.11832');<br>
-              document.querySelector('#second').locate('Lille');<br>
-              document.querySelector('#second').itinerary('Paris', 'Lyon');
-          </code></p>
-      </section>
+      <h1>Démos &lt;Mappy Element /&gt;</h1>
+      <ul>
+          <li>avec <a href="demo-polymer.html">Polymer</a>
+      </ul>
   </body>
 </html>
