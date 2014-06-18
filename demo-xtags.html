@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Démo WebComponent mappy en XTags</title>
+    <link rel="stylesheet" href="common.css" />
+    <script type="text/javascript" src="xtags/x-tag-components.js"></script>
+    <script type="text/javascript" src="xtags-mappy.js"></script>
+    <!-- below are resources needed by mappy-element -->
+    <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="L.Mappy.css" />
+    <script src="bower_components/leaflet/dist/leaflet.js"></script>
+    <script src="L.Mappy.js"></script>
+  </head>
+  <body>
+      <h1>&lt;mappy-element&gt; en <a href="http://x-tags.org/">XTags</a></h1>
+
+      <article>
+          <h2>Balise mappy</h2>
+          <div></div>
+          <script>
+            var mappyElement = document.createElement('mappy-element');
+            document.querySelector('article div').appendChild(mappyElement);
+          </script>
+      </article>
+
+      <section>
+          <h3>À essayer...</h3>
+          <p><code>
+              document.querySelector('mappy-element').locate('Lille');<br>
+              document.querySelector('mappy-element').itinerary('Paris', 'Lyon');
+          </code></p>
+      </section>
+  </body>
+</html>

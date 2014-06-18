@@ -2,42 +2,26 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <title>Démo WebComponent mappy en Polymer</title>
+    <link rel="stylesheet" href="common.css" />
     <script src="bower_components/platform/platform.js"></script>
     <link rel="import" href="bower_components/polymer/polymer.html">
-    <link rel="import" href="polymer-mappy-element.html">
+    <link rel="import" href="polymer-mappy.html">
     <style>
-        body {
-            font-family: Sans-serif;
-            padding: 1em;
-        }
-        body h1 {
-            left: auto;
-        }
-        mappy-element {
-            display: block;
-            width: 400px;
-            height: 400px;
-        }
-        article {
-            display: inline-block;
-            margin: 1em;
-            width: 450px;
-            vertical-align: top;
-        }
+        body h1 { left: auto; }
     </style>
   </head>
   <body>
-      <h1>&lt;Mappy Element /&gt;</h1>
+      <h1>&lt;mappy-element&gt; en <a href="http://www.polymer-project.org/">Polymer</a></h1>
+
       <article>
           <h2>Balise mappy</h2>
           <mappy-element></mappy-element>
-          <p><code>&lt;mappy-element&gt;&lt;/mappy-element&gt;</code></p>
       </article>
 
       <article>
           <h2>avec des attributs personalisés</h2>
           <mappy-element id="second" lat="43.6044" lng="1.44295" layersControl="true"></mappy-element>
-          <p><code>&lt;mappy-element id="second" lat="43.6044" lng="1.44295" layersControl="true"&gt;&lt;/mappy-element&gt;</code></p>
           <p>lat: <span class="lat"></span>, lng: <span class="lng"></span></p>
           <script>
             document.querySelector('#second').addEventListener('mapmoved', function(e) {

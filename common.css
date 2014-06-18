@@ -1,0 +1,15 @@
+body {
+    font-family: Sans-serif;
+    padding: 1em;
+}
+mappy-element {
+    display: block;
+    width: 400px;
+    height: 400px;
+}
+article {
+    display: inline-block;
+    margin: 1em;
+    width: 450px;
+    vertical-align: top;
+}
