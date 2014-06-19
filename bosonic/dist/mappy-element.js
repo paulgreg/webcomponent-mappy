@@ -1,11 +1,17 @@
 (function () {
     var MappyElementPrototype = Object.create(HTMLElement.prototype, {
+            div: {
+                enumerable: true,
+                get: function () {
+                    return this.querySelector('div#map');
+                }
+            },
             createdCallback: {
                 enumerable: true,
                 value: function () {
                     var t = this.template.content.cloneNode(true);
                     this.appendChild(t);
-                    this.map = new L.Mappy.Map(t.ownerDocument.querySelector('#map'), {
+                    this.map = new L.Mappy.Map(this.div, {
                         center: [
                             this.lat,
                             this.lng

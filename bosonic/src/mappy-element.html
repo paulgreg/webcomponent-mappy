@@ -14,11 +14,14 @@
     </template>
     <script>
         ({
+             get div() {
+                return this.querySelector('div#map');
+            },
             createdCallback: function() {
                 var t = this.template.content.cloneNode(true);
                 this.appendChild(t);
 
-                this.map = new L.Mappy.Map(t.ownerDocument.querySelector('#map'), {
+                this.map = new L.Mappy.Map(this.div, {
                     center: [this.lat, this.lng],
                     zoom: this.zoom,
                     layersControl: this.layersControl,
