@@ -1,0 +1,8 @@
+mappy-element #map {
+  height: 100%;
+  width: 100%;
+  min-height: 200px;
+  min-width: 200px;
+  margin: 0;
+  padding: 0;
+}

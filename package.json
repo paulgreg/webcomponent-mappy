@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "description": "",
   "dependencies": {
-    "bower": "^1.3.5"
+    "bower": "^1.3.5",
+    "generator-bosonic": "^0.2.0",
+    "grunt-cli": "^0.1.13",
+    "yo": "^1.1.2"
   },
   "repository": {
     "type": "git",
