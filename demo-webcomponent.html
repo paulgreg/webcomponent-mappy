@@ -4,11 +4,7 @@
     <meta charset="utf-8" />
     <title>Démo WebComponent mappy</title>
     <link rel="stylesheet" href="common.css" />
-    <script type="text/javascript" src="webcomponent-mappy.js"></script>
-    <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
-    <link rel="stylesheet" href="L.Mappy.css" />
-    <script src="bower_components/leaflet/dist/leaflet.js"></script>
-    <script src="L.Mappy.js"></script>
+    <link rel="import" href="webcomponent-mappy.html" />
   </head>
   <body>
       <h1>&lt;mappy-element&gt; à la main</h1>
@@ -17,8 +13,10 @@
           <h2>Balise mappy</h2>
           <div></div>
           <script>
-            var mappyElement = document.createElement('mappy-element');
-            document.querySelector('article div').appendChild(mappyElement);
+            document.addEventListener('DOMContentLoaded', function() {
+                var mappyElement = document.createElement('mappy-element');
+                document.querySelector('article div').appendChild(mappyElement);
+            }, true);
           </script>
       </article>
 
